@@ -1,0 +1,151 @@
+.widthModal {
+    width: 80%;
+    margin: auto;
+}
+
+.widthModal .form-init {
+    padding: 0 !important;
+}
+
+.countTimerOtp {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    justify-content: end;
+}
+
+.countTimerOtp p {
+    margin: 0px;
+}
+
+.custom-modal,
+.custom-modal1 {
+    z-index: 9999;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scaleX(0) scaleY(0);
+    min-width: 500px;
+    min-height: 200px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    background: #fff;
+    animation-name: zoom;
+    animation-duration: 0.7s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+}
+
+.react-tel-input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    position: relative;
+    width: 100%;
+}
+
+.react-tel-input .form-control {
+    box-shadow: none;
+    width: 100% !important;
+    line-height: 40px !important;
+    height: 40px !important;
+    border: 1px solid #eeeeee !important;
+}
+
+
+button.forgetpassword {
+    border: none;
+    background: none;
+    font-weight: 550;
+    text-align: end;
+}
+
+.verification-code--inputs{
+    height: 40px;
+}
+
+.react-tel-input input:focus{
+    box-shadow: none;
+}
+
+.verification-code--inputss {
+    display: flex;
+    justify-content: center;
+}
+
+.verification-code--inputss input {
+    margin: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    width: 46px !important;
+    height: 46px;
+    padding: 5px;
+    /* text-align: center; */
+    display: inline-block;
+    box-sizing: border-box;
+    
+    /* color: #fff; */
+    border: 1px solid #9F9F9F;
+    border-radius: 5px;
+    outline: 0;
+    background: 0 !important;
+    box-shadow: none;
+}
+
+button.resendotp {
+    color: #ffba19;
+    border: none;
+    background: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.gobacklink .changemobile {
+    border: 2px solid #ffba19;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    width: 100%;
+    background: #fff;
+}
+
+.gobacklink .changemobile:hover {
+    border: 2px solid #fff;
+    background: #000;
+    color: #fff !important;
+    padding: 5px;
+    font-size: 15px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+@keyframes zoom {
+    from {
+        transform: translate(-50%, -50%) scaleX(0) scaleY(0);
+    }
+
+    to {
+        transform: translate(-50%, -50%) scaleX(1) scaleY(1);
+    }
+}
+
+.accountContent .form-init {
+    padding: 0;
+}
+
+.errorVeri {
+    margin-left: 12px;
+}
+
+@media(min-width:768px) {
+    .otpErrorSen {
+        margin-left: 24px !important;
+    }
+}
+
+@media(max-width:767px) {
+    .otpErrorSen {
+        margin-left: -22px !important;
+    }
+}

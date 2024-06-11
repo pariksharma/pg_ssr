@@ -19,7 +19,7 @@ import { resHandler } from "../../utils/helper";
 import { useDispatch } from "react-redux";
 import { courseDetails_Action } from "./courseDetailSlice";
 import Overview from "./overview";
-import PDF from "./PDF";
+// import PDF from "./PDF";
 import Test from "./test";
 import Video from "./video";
 import TabDisplay from "./tabDisplay";
@@ -30,7 +30,7 @@ import ImageTab from "./imageTab";
 import LinkTab from "./linkTab";
 import NoteTab from "./noteTab";
 import AudioTab from "./audioTab";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import Subjective from "./subjective";
 import Daily_Assignment from "./daily_Assignment";
 import DisplayContent from "./displayContent";
@@ -334,9 +334,9 @@ export default function ViewDetail() {
                                 {item.type == "faq" && (
                                   <FAQ value={item.meta.list} />
                                 )}
-                                {item.type == "pdf" && (
+                                {/* {item.type == "pdf" && (
                                   <PDF value={item} resetRef={resetPdfLayerRef} tabName={item.tile_name} is_purchased={courseDetails?.course_detail.is_purchased} mrp={courseDetails?.course_detail.mrp} />
-                                )}
+                                )} */}
                                 {item.type == "video" && (
                                   <Video value={item} resetRef={resetVideoLayerRef} tabName={item.tile_name} is_purchased={courseDetails?.course_detail.is_purchased} mrp={courseDetails?.course_detail.mrp} />
                                 )}

@@ -6,8 +6,8 @@ import { resHandler } from "../../utils/helper";
 
 import Modal from "../../components/modal/modal";
 import BuyCourseModal from "../../components/buyCourseModal/index";
-import { useSearchParams } from "react-router-dom/dist";
-import PDFLayer3 from "./PDFLayer3";
+import { useSearchParams } from "react-router-dom";
+// import PDFLayer3 from "./PDFLayer3";
 import ImageLayer3 from "./imageLayer3";
 import VideoLayer3 from "./videoLayer3";
 import AudioLayer3 from "./audioLayer3";
@@ -247,7 +247,7 @@ export default function Content({ value, tabName, is_purchased, resetRef, course
                 filteredLayer3Data.map((item, i) => {
                   return (
                     <>
-                      {item.file_type === '1' && <PDFLayer3 value={item} getDataUrl={handleDataUrl} key={i} />}
+                      {/* {item.file_type === '1' && <PDFLayer3 value={item} getDataUrl={handleDataUrl} key={i} />} */}
                       {item.file_type === '3' && <VideoLayer3 value={item} key={i} />}
                       {item.file_type === '6' && <ImageLayer3 value={item} key={i} />}
                       {item.file_type === '7' && <NoteTabLayer3 value={item} key={i} />}

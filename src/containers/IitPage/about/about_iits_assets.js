@@ -1,3 +1,5 @@
+import React from 'react';
+
 import IIT_kharagpur from '../IITs/IIT_kharagpur.js';
 
 import IIT_bombay from '../IITs/IIT_bombay.js';

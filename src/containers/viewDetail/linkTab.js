@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getMasterDataService } from "../../services";
 import { blobToURL, isLogin, resHandler } from "../../utils/helper";
 import Modal from "../../components/modal/modal";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import BuyCourseModal from "../../components/buyCourseModal/index";
 import LoginPageModal from "../login/loginPageModal";
 
@@ -189,7 +189,7 @@ export default function LinkTab({ value, tabName, is_purchased, mrp, resetRef })
                       ) : (
                         // <i className="fa fa-angle-right" aria-hidden="true"></i>
 
-                        <img src={lock_icon} />
+                        <img src={lock_icon} style={{width: '30px'}} />
                       )}{" "}
                     </div>
                   </div>

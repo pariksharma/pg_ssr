@@ -11,7 +11,7 @@ import Button4 from "../../components/Buttons/button4/button4";
 import { resHandler } from "../../utils/helper";
 import { courses_Action } from "../home/masterContentSlice";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import NoDataFound from "../noDataFound/noDataFound";
 
 const AddImage = "/assets/images/Rectangle 7957.jpg";

@@ -51,6 +51,10 @@
     color: #000;
     font-size: 12px;
   }
+
+  .signuppage-sec {
+    padding: 0 35px;
+  }
   
   .signuppage-sec p.error {
     font-size: 12px;

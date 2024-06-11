@@ -9,7 +9,7 @@ import { Tab, Tabs } from "react-bootstrap";
 import Overview from "./overview";
 import Content from "./content";
 import FAQ from "./FAQ";
-import PDF from "./PDF";
+// import PDF from "./PDF";
 import Video from "./video";
 import ImageTab from "./imageTab";
 import LinkTab from "./linkTab";
@@ -259,9 +259,9 @@ export default function CourseCombo({ value, tabName, parentId }) {
                         {item.type == "faq" && (
                           <FAQ value={item.meta.list} />
                         )}
-                        {item.type == "pdf" && (
+                        {/* {item.type == "pdf" && (
                           <PDF value={item} resetRef={resetPdfLayerRef} tabName={item.tile_name} is_purchased={courseDetails?.course_detail.is_purchased} mrp={courseDetails?.course_detail.mrp} />
-                        )}
+                        )} */}
                         {item.type == "video" && (
                           <Video value={item} resetRef={resetVideoLayerRef} tabName={item.tile_name} is_purchased={courseDetails?.course_detail.is_purchased} mrp={courseDetails?.course_detail.mrp} />
                         )}

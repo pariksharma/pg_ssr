@@ -3,7 +3,7 @@ import "./index.css"
 import Modal from '../modal/modal'
 import Button4 from '../Buttons/button4/button4'
 import { useLocation, useNavigate } from 'react-router-dom'
-import { useParams, useSearchParams } from 'react-router-dom/dist'
+import { useParams, useSearchParams } from 'react-router-dom'
 import { freeTransactionService } from '../../services'
 import { resHandler } from '../../utils/helper';
 import SweetAlert2 from "react-sweetalert2";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect,useRef } from 'react'
 import { Tab, Tabs } from 'react-bootstrap'
-import PDF from './PDF';
+// import PDF from './PDF';
 import Video from './video';
 import Daily_Assignment from './daily_Assignment';
 import Subjective from './subjective';
@@ -67,9 +67,9 @@ export default function DisplayContent({ value }) {
             eventKey={item.tile_name}
             title={item.tile_name}
             key={i}>
-            {item.type == "pdf" && (
+            {/* {item.type == "pdf" && (
               <PDF value={item} resetRef={resetPdfLayerRef} tabName={item.tile_name} is_purchased={'1'} />
-            )}
+            )} */}
             {item.type == "video" && (
               <Video value={item} resetRef={resetVideoLayerRef} tabName={item.tile_name} is_purchased={'1'} />
             )}

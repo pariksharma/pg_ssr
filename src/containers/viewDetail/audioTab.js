@@ -6,7 +6,7 @@ import { isLogin, resHandler } from "../../utils/helper";
 
 import BuyCourseModal from "../../components/buyCourseModal/index";
 import AudioPopup from "./audioPopup";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import LoginPageModal from "../login/loginPageModal";
 
 const video_icon = "/assets/images/icons/Video.png";
@@ -205,7 +205,7 @@ export default function AudioTab({ value, tabName, is_purchased, resetRef }) {
 
                       ) : (
                         // <i className="fa fa-angle-right" aria-hidden="true"></i>
-                        <img src={lock_icon} />
+                        <img src={lock_icon} style={{width: '30px'}} />
                       )}{" "}
                     </div>
                   </div>

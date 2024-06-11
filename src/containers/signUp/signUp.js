@@ -107,7 +107,7 @@ export default function SignUp() {
         !status && message && toast.error(message)
         status && toast.success(message);
         status && setOtpVerfied(true);;
-        !status && message && (message == 'OTP expired') && location.reload();
+        !status && message && (message == 'OTP expired') && navigate(0);
       }).catch(err => console.log(err))
     } else {
       setOtpError(true)

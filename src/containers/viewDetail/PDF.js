@@ -4,7 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getMasterDataService } from "../../services";
 import { isLogin, resHandler } from "../../utils/helper";
 import BuyCourseModal from "../../components/buyCourseModal/index";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import NoDataFound from "../noDataFound/noDataFound";
 import LoginPageModal from "../login/loginPageModal";
 import { Document, Page, pdfjs } from "react-pdf";
@@ -264,7 +264,7 @@ export default function PDF({ value, tabName, is_purchased, mrp, resetRef }) {
                           ) : (
                             // <i className="fa fa-angle-right" aria-hidden="true"></i>
 
-                            <img src={lock_icon} />
+                            <img src={lock_icon} style={{width: '30px'}} />
                           )}{" "}
                         </div>
                       </div>

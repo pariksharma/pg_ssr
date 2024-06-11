@@ -3,7 +3,7 @@ import Tab from "./tab";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMasterDataService } from "../../services";
 import { isLogin, resHandler } from "../../utils/helper";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import LoginPageModal from "../login/loginPageModal";
 
 const subject_icon = "/assets/images/icons/subject_icon.png";
@@ -187,7 +187,7 @@ export default function NoteTab({ value, tabName, is_purchased, resetRef }) {
 
                         ) : (
                           // <i className="fa fa-angle-right" aria-hidden="true"></i>
-                          <img src={lock_icon} />
+                          <img src={lock_icon} style={{width: '30px'}} />
                         )}{" "}
                       </div>
                     </div>

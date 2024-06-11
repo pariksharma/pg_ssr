@@ -5,7 +5,7 @@ import { getMasterDataService } from "../../services";
 import { isLogin, resHandler } from "../../utils/helper";
 import Modal from "../../components/modal/modal";
 import BuyCourseModal from "../../components/buyCourseModal/index";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import LoginPageModal from "../login/loginPageModal";
 
 const Image_icon = '/assets/images/icons/Image.png'

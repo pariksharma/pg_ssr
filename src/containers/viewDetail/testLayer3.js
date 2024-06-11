@@ -16,7 +16,8 @@ export default function TestLayer3({ value }) {
     lang: 1,
     // first_attempt: 0,
     course_id: searchParam.get('course_id'),
-    appid: import.meta.env.VITE_APP_ID,
+    // appid: import.meta.env.VITE_APP_ID,
+    appid: 427,
     Devicetype: 4,
   }
 
@@ -27,8 +28,8 @@ export default function TestLayer3({ value }) {
       ...data
     }
     const encrypted = btoa(JSON.stringify(params))
-    window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/learn_result_window?data=${encrypted}`, '_blank');
-
+    // window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/learn_result_window?data=${encrypted}`, '_blank');
+    window.open(`https://testphysicsgalaxy.videocrypt.in/webstaging/web/LiveTest/learn_result_window?data=${encrypted}`, '_blank');
   }
 
   const handlePracticeClick = (value) => {
@@ -38,7 +39,8 @@ export default function TestLayer3({ value }) {
     }
     const encrypted = btoa(JSON.stringify(params))
     // https://pathshalaclasses.in//web/LiveTest/attempt_now_window?
-    window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/attempt_now_window?data=${encrypted}`, '_blank');
+    // window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/attempt_now_window?data=${encrypted}`, '_blank');
+    window.open(`https://testphysicsgalaxy.videocrypt.in/webstaging/web/LiveTest/attempt_now_window?data=${encrypted}`, '_blank');
   }
 
   const handleViewRank = (value) => {
@@ -47,7 +49,8 @@ export default function TestLayer3({ value }) {
       first_attempt: 1
     }
     const encrypted = btoa(JSON.stringify(params))
-    window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/result_window?data=${encrypted}`, '_blank');
+    // window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/result_window?data=${encrypted}`, '_blank');
+    window.open(`https://testphysicsgalaxy.videocrypt.in/webstaging/web/LiveTest/result_window?data=${encrypted}`, '_blank');
   }
 
   const handleViewResult = (value) => {
@@ -56,7 +59,8 @@ export default function TestLayer3({ value }) {
       first_attempt: 1
     }
     const encrypted = btoa(JSON.stringify(params))
-    window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/result_window?data=${encrypted}`, '_blank');
+    // window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/result_window?data=${encrypted}`, '_blank');
+    window.open(`https://testphysicsgalaxy.videocrypt.in/webstaging/web/LiveTest/result_window?data=${encrypted}`, '_blank');
 
   }
 
@@ -67,7 +71,8 @@ export default function TestLayer3({ value }) {
     }
     const encrypted = btoa(JSON.stringify(params))
     // https://pathshalaclasses.in//web/LiveTest/learn_result_window?data=
-    window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/attempt_now_window?data=${encrypted}`, '_blank');
+    // window.open(`${import.meta.env.VITE_TEST_SERIES_URL}/attempt_now_window?data=${encrypted}`, '_blank');
+    window.open(`https://testphysicsgalaxy.videocrypt.in/webstaging/web/LiveTest/attempt_now_window?data=${encrypted}`, '_blank');
   }
 
 

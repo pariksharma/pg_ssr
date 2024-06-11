@@ -4,7 +4,7 @@ import Tab from "./tab";
 import { useParams } from "react-router-dom";
 import { getMasterDataService } from "../../services";
 import { formatTimestamp, isLogin, resHandler } from "../../utils/helper";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import LoginPageModal from "../login/loginPageModal";
 import Modal from "../../components/modal/modal";
 import BuyCourseModal from "../../components/buyCourseModal/index";

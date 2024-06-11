@@ -3,7 +3,7 @@ import Tab from "./tab";
 import { useNavigate, useParams } from "react-router-dom";
 import { getMasterDataService } from "../../services";
 import { isLogin, resHandler } from "../../utils/helper";
-import { useSearchParams } from "react-router-dom/dist";
+import { useSearchParams } from "react-router-dom";
 import LoginPageModal from "../login/loginPageModal";
 
 const video_icon = "/assets/images/icons/Video.png";

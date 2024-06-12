@@ -17,6 +17,7 @@ import EventList from '../containers/eventList/eventList'
 import SignUp from '../containers/signUp/signUp'
 import CoursesOrder from '../containers/coursesOrder/coursesOrder'
 import Login from '../containers/login/login'
+import ForgetPassword from '../containers/forgetPassword/forgetPassword'
 
 
 
@@ -25,7 +26,6 @@ function PrivateRoute({ children, redirectTo }) {
   const jwt = localStorage.getItem("jwt");
   if (!jwt && typeof window !== 'undefined') {
     const fullUrl = window.location.href;
-    // console.log("fullUrl", fullUrl)
     localStorage.setItem('redirect', fullUrl);
     return <Navigate to={redirectTo} />;
   }
@@ -46,16 +46,13 @@ function PrivateRoute({ children, redirectTo }) {
 }
 
 function PublicRoute({ children, redirectTo }) {
-  const [isLogin, setIsLogin] = useState(false);
-
-  useEffect(() => {
+  // const [isLogin, setIsLogin] = useState(false);
     if (typeof window !== 'undefined') {
       const jwt = localStorage.getItem('jwt');
-      setIsLogin(!!jwt);
+      return !jwt ? children : <Navigate to={redirectTo} />;
     }
-  }, []);
 
-  return !isLogin ? children : <Navigate to={redirectTo} />;
+  
 
 
   // let isLogin = localStorage?.getItem("jwt");
@@ -72,8 +69,9 @@ const Routing = () => {
             <Route path='/' element={<Home />} />
 
             <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />
+            <Route path='/forget_password' element={<PublicRoute redirectTo={'/'} ><ForgetPassword /></PublicRoute>} />
             <Route path='/signup' element={<PublicRoute redirectTo={'/'} ><SignUp /></PublicRoute>} />
-            <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />\
+            <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />
             {/* <Route path='/coursesorder' element={<CoursesOrder />} /> */}
 
             <Route path='/view_details' element={<ViewDetail />} />

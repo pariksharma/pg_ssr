@@ -758,6 +758,7 @@ export default function Header(props) {
                                 <ul className="dropdown-menu course-dropmenu shadow  ">
                                   {childData(item.id) &&
                                     childData(item.id).map((value, i) => {
+                                      // {console.log('childData', value)}
                                       return (
                                         <li
                                           key={i}

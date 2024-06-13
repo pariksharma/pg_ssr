@@ -18,6 +18,8 @@ import SignUp from '../containers/signUp/signUp'
 import CoursesOrder from '../containers/coursesOrder/coursesOrder'
 import Login from '../containers/login/login'
 import ForgetPassword from '../containers/forgetPassword/forgetPassword'
+import ChangePassword from '../containers/changePassword/changePassword'
+import Profile from '../containers/profile/profile'
 
 
 
@@ -71,8 +73,10 @@ const Routing = () => {
             <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />
             <Route path='/forget_password' element={<PublicRoute redirectTo={'/'} ><ForgetPassword /></PublicRoute>} />
             <Route path='/signup' element={<PublicRoute redirectTo={'/'} ><SignUp /></PublicRoute>} />
+
+            <Route path='/change_password' element={<PrivateRoute redirectTo={'/login'} ><ChangePassword /></PrivateRoute>} />
             <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />
-            {/* <Route path='/coursesorder' element={<CoursesOrder />} /> */}
+            <Route path='/user-profile' element={<PrivateRoute redirectTo={"/login"}><Profile /></PrivateRoute>} />
 
             <Route path='/view_details' element={<ViewDetail />} />
             <Route path='/allcourses' element={<AllCourses />} />

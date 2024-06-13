@@ -20,6 +20,11 @@ import Login from '../containers/login/login'
 import ForgetPassword from '../containers/forgetPassword/forgetPassword'
 import ChangePassword from '../containers/changePassword/changePassword'
 import Profile from '../containers/profile/profile'
+import Library from '../containers/library/library'
+import PurchaseHistory from '../containers/purchaseHistory/purchaseHistory'
+import NotificationTab from '../containers/notificationTab/notificationTab'
+import LiveTest from '../containers/liveTest/liveTest'
+import LiveClasses from '../containers/liveClasses/liveClasses'
 
 
 
@@ -77,6 +82,11 @@ const Routing = () => {
             <Route path='/change_password' element={<PrivateRoute redirectTo={'/login'} ><ChangePassword /></PrivateRoute>} />
             <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />
             <Route path='/user-profile' element={<PrivateRoute redirectTo={"/login"}><Profile /></PrivateRoute>} />
+            <Route path='/library' element={<PrivateRoute redirectTo={"/login"}><Library /></PrivateRoute>} />
+            <Route path='/purchasehistory' element={<PrivateRoute redirectTo={"/login"}><PurchaseHistory /></PrivateRoute>} />
+            <Route path='/notifications' element={<PrivateRoute redirectTo={"/login"}><NotificationTab /></PrivateRoute>} />
+            <Route path='/livetest' element={<PrivateRoute redirectTo={"/login"}><LiveTest /></PrivateRoute>} />
+            <Route path='/liveclasses' element={<PrivateRoute redirectTo={"/login"}><LiveClasses /></PrivateRoute>} />
 
             <Route path='/view_details' element={<ViewDetail />} />
             <Route path='/allcourses' element={<AllCourses />} />

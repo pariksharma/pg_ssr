@@ -3,6 +3,9 @@ import { FLUSH, PAUSE, PERSIST, PURGE, REGISTER, REHYDRATE } from "redux-persist
 import footerReducer from "../components/footer/footerSlice";
 import masterContentReducer from "../containers/home/masterContentSlice";
 import profileReducer from "../containers/profile/profileSlice";
+import libraryReducer from "../containers/library/librarySlice";
+import purchaseHistoryReducer from "../containers/purchaseHistory/purchaseHistorySlice";
+import notificationReducer from "../containers/notificationTab/notificationSlice";
 
 
 
@@ -10,6 +13,9 @@ const combinereducer = combineReducers({
     allCategory: masterContentReducer,
     footerDetail: footerReducer,
     profileDetail: profileReducer,
+    libraryDetail: libraryReducer,
+    purchaseHistory: purchaseHistoryReducer,
+    notification: notificationReducer,
 })
 
 const rootReducer = (state, action) => {

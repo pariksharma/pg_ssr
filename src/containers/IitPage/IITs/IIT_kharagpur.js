@@ -2,10 +2,11 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Student_select from "../student_select/student_select";
 import Academic from "../academic_admission/academic";
-import { Accordion, Tabs } from "react-bootstrap";
-import Tab from "../../viewDetail/tab";
+import { Accordion, Tabs, Tab } from "react-bootstrap";
+// import Tab from "../../viewDetail/tab";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import './iits.css'
 
 const iit_kharagpur = "/assets/IIT_images/IIT-Kharagpur.jpg";
 

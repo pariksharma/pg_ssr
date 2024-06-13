@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 const lock_icon = "/assets/images/icons/lock_icon.svg"
 
 export default function Tab({ item, Index, nextIndex, image }) {
+
   const handleClick = (index) => {
     window.scrollTo({ top: 50, behavior: 'smooth' });
     nextIndex(index)

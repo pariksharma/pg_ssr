@@ -25,45 +25,27 @@ import PurchaseHistory from '../containers/purchaseHistory/purchaseHistory'
 import NotificationTab from '../containers/notificationTab/notificationTab'
 import LiveTest from '../containers/liveTest/liveTest'
 import LiveClasses from '../containers/liveClasses/liveClasses'
+import CCDetails from '../containers/viewDetail/CCDetails'
 
 
 
 function PrivateRoute({ children, redirectTo }) {
   if (typeof window !== 'undefined') {
-  const jwt = localStorage.getItem("jwt");
-  if (!jwt && typeof window !== 'undefined') {
-    const fullUrl = window.location.href;
-    localStorage.setItem('redirect', fullUrl);
-    return <Navigate to={redirectTo} />;
-  }
-
+    const jwt = localStorage.getItem("jwt");
+    if (!jwt && typeof window !== 'undefined') {
+      const fullUrl = window.location.href;
+      localStorage.setItem('redirect', fullUrl);
+      return <Navigate to={redirectTo} />;
+    }
   return jwt ? children : null;
   }
-
-  // let isLogin = localStorage?.getItem("jwt");
-  // if (isLogin) {
-  //   return children
-  // }
-  // else {
-  //   const fullUrl = window.location.href;
-  //   localStorage.setItem('redirect', fullUrl);
-  //   return <Navigate to={redirectTo} />
-  // }
-
 }
 
 function PublicRoute({ children, redirectTo }) {
-  // const [isLogin, setIsLogin] = useState(false);
-    if (typeof window !== 'undefined') {
-      const jwt = localStorage.getItem('jwt');
-      return !jwt ? children : <Navigate to={redirectTo} />;
-    }
-
-  
-
-
-  // let isLogin = localStorage?.getItem("jwt");
-  // return !isLogin ? children : <Navigate to={redirectTo} />;
+  if (typeof window !== 'undefined') {
+    const jwt = localStorage.getItem('jwt');
+    return !jwt ? children : <Navigate to={redirectTo} />;
+  }
 } 
 
 
@@ -72,41 +54,46 @@ const Routing = () => {
 
   return (
     <>
-        <Routes>
-            <Route path='/' element={<Home />} />
+      <Routes>
+        <Route path='/' element={<Home />} />
 
-            <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />
-            <Route path='/forget_password' element={<PublicRoute redirectTo={'/'} ><ForgetPassword /></PublicRoute>} />
-            <Route path='/signup' element={<PublicRoute redirectTo={'/'} ><SignUp /></PublicRoute>} />
+        {/* Login and Signup Routes */}
+        <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />
+        <Route path='/forget_password' element={<PublicRoute redirectTo={'/'} ><ForgetPassword /></PublicRoute>} />
+        <Route path='/signup' element={<PublicRoute redirectTo={'/'} ><SignUp /></PublicRoute>} />
 
-            <Route path='/change_password' element={<PrivateRoute redirectTo={'/login'} ><ChangePassword /></PrivateRoute>} />
-            <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />
-            <Route path='/user-profile' element={<PrivateRoute redirectTo={"/login"}><Profile /></PrivateRoute>} />
-            <Route path='/library' element={<PrivateRoute redirectTo={"/login"}><Library /></PrivateRoute>} />
-            <Route path='/purchasehistory' element={<PrivateRoute redirectTo={"/login"}><PurchaseHistory /></PrivateRoute>} />
-            <Route path='/notifications' element={<PrivateRoute redirectTo={"/login"}><NotificationTab /></PrivateRoute>} />
-            <Route path='/livetest' element={<PrivateRoute redirectTo={"/login"}><LiveTest /></PrivateRoute>} />
-            <Route path='/liveclasses' element={<PrivateRoute redirectTo={"/login"}><LiveClasses /></PrivateRoute>} />
+        {/* Routes works after login */}
+        <Route path='/change_password' element={<PrivateRoute redirectTo={'/login'} ><ChangePassword /></PrivateRoute>} />
+        <Route path='/coursesorder' element={<PrivateRoute redirectTo={"/login"}><CoursesOrder /></PrivateRoute>} />
+        <Route path='/user-profile' element={<PrivateRoute redirectTo={"/login"}><Profile /></PrivateRoute>} />
+        <Route path='/library' element={<PrivateRoute redirectTo={"/login"}><Library /></PrivateRoute>} />
+        <Route path='/purchasehistory' element={<PrivateRoute redirectTo={"/login"}><PurchaseHistory /></PrivateRoute>} />
+        <Route path='/notifications' element={<PrivateRoute redirectTo={"/login"}><NotificationTab /></PrivateRoute>} />
+        <Route path='/livetest' element={<PrivateRoute redirectTo={"/login"}><LiveTest /></PrivateRoute>} />
+        <Route path='/liveclasses' element={<PrivateRoute redirectTo={"/login"}><LiveClasses /></PrivateRoute>} />
 
-            <Route path='/view_details' element={<ViewDetail />} />
-            <Route path='/allcourses' element={<AllCourses />} />
-            <Route path='/ourcourses' element={<OurCourses />} />
-            <Route path='/booksummery' element={<BookSummery />} />
-            <Route path='*' element={<NotFound />} />
-            <Route path='/about-iits' element={<About_iits />} />
+        {/* Course Details Routes */}
+        <Route path='/view_details' element={<ViewDetail />} />
+        <Route path='/cc_details' element={<CCDetails />} />
+        <Route path='/allcourses' element={<AllCourses />} />
+        <Route path='/ourcourses' element={<OurCourses />} />
+        <Route path='/booksummery' element={<BookSummery />} />
+        <Route path='*' element={<NotFound />} />
 
-            {/* IITs Routes */}
-            <Route path='/thank-you' element={<ThankYou />} />
-            <Route path='/iits' element={<IitSideBar />} />
+        {/* IITs Routes */}
+        <Route path='/thank-you' element={<ThankYou />} />
+        <Route path='/iits' element={<IitSideBar />} />
+        <Route path='/about-iits' element={<About_iits />} />
 
+        {/* Footer link Routes */}
+        <Route path='/about-us' element={<AboutUs />} />
+        <Route path='/privacypolicy' element={<PrivacyPolicy />} />
+        <Route path='/refund-policies' element={<RefundPolicy />} />
+        <Route path='/termcondition' element={<TermCondition />} />
 
-            <Route path='/about-us' element={<AboutUs />} />
-            <Route path='/privacypolicy' element={<PrivacyPolicy />} />
-            <Route path='/refund-policies' element={<RefundPolicy />} />
-            <Route path='/termcondition' element={<TermCondition />} />
-            <Route path='/events' element={<EventList />} />
-        </Routes>
-        {/* <h1>Hello</h1> */}
+        {/* Events Routes */}
+        <Route path='/events' element={<EventList />} />
+      </Routes>
     </>
   )
 }

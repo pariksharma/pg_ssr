@@ -53,6 +53,7 @@ export default function Footer() {
 
   useEffect(() => {
     if (isFetched) {
+      console.log('data', data)
       dispatch(footerAction(data))
       setFooterInfo(data);
     }

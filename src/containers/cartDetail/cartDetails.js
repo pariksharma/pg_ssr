@@ -130,9 +130,7 @@ export default function CartDetails() {
 
     await getFPaymentService(formData).then(res => {
       let { data, status, message } = resHandler(res);
-      // let key = import.meta.env.VITE_MID;
-      let key = '2PBP7IABZ2'
-
+      let key = process.env.REACT_APP_MID;
       status && isScriptLoaded && paymentGateWay(data.txnToken, key);
     }).catch(err => {
       console.log(err);
@@ -145,9 +143,7 @@ export default function CartDetails() {
       return;
     }
 
-    // var easebuzzCheckout = new window.EasebuzzCheckout(key, import.meta.env.VITE_TYPE);
-    var easebuzzCheckout = new window.EasebuzzCheckout(key, 'type')
-
+    var easebuzzCheckout = new window.EasebuzzCheckout(key, process.env.REACT_APP_MID);
     var options = {
       access_key: acc_key, 
       onResponse: (response) => {

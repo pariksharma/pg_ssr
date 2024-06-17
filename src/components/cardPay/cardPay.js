@@ -290,8 +290,7 @@ export default function CardPay({ detail, id, sendDataToParent, loading }) {
   const paymentGateWay = async (acc_key, key) => {
     var easebuzzCheckout = new window.EasebuzzCheckout(
       key,
-      "test"    // from .env file
-      // import.meta.env.VITE_TYPE
+      process.env.REACT_APP_TYPE
     );
     var options = {
       access_key: acc_key, // access key received via Initiate Payment

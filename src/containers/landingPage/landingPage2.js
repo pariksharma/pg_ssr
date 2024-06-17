@@ -113,10 +113,8 @@ export default function LandingPage2() {
 
 
     useEffect(() => {
-        // getCourseDetails(import.meta.env.VITE_COURSEID2);
-        getCourseDetails(13154)
-
-        // getCoupons(import.meta.env.VITE_COURSEID2);
+        getCourseDetails(process.env.REACT_APP_COURSEID2);
+        // getCoupons(process.env.REACT_APP_COURSEID2);
         // getStateList(101);
     }, []);
 
@@ -144,7 +142,7 @@ export default function LandingPage2() {
     //   if(coupanCode && coupanCode.length >= 8){
     //     const data = {
     //       coupon : coupanCode,
-    //       course_id : import.meta.env.VITE_COURSEID2
+    //       course_id : process.env.REACT_APP_COURSEID2
     //     }
     //     applyCoupan(data)
     //   }
@@ -159,9 +157,7 @@ export default function LandingPage2() {
             setCoupanCode(searchParam.get("utm_content"));
             const data = {
                 coupon: searchParam.get("utm_content"),
-                // course_id: import.meta.env.VITE_COURSEID2,
-                course_id: 13154
-
+                course_id: process.env.REACT_APP_COURSEID2,
             };
             setPreAppliedCoupon(false);
             const value = applyCoupan(data);
@@ -236,12 +232,9 @@ export default function LandingPage2() {
         formData.append("device_id", "WEB");
         formData.append("device_token", "WEB");
         formData.append("email", email);
-        // formData.append("course_id", import.meta.env.VITE_COURSEID2);
-        formData.append("course_id", 13154);
-
+        formData.append("course_id", process.env.REACT_APP_COURSEID2);
         formData.append("coupon_code", coupanCode ? coupanCode : "");
-        // formData.append("app_id", import.meta.env.VITE_APP_ID);
-        formData.append("app_id", 427)
+        formData.append("app_id", process.env.REACT_APP_APP_ID);
 
         // setState("");
         // setCity("");
@@ -356,12 +349,9 @@ export default function LandingPage2() {
         formData.append("resend", 1);
         formData.append("is_registration", 1);
         formData.append("is_promotional", 1);
-        // formData.append("course_id", import.meta.env.VITE_COURSEID2);
-        formData.append("course_id", 13154);
-
+        formData.append("course_id", process.env.REACT_APP_COURSEID2);
         formData.append("coupon_code", coupanCode ? coupanCode : "");
-        // formData.append("app_id", import.meta.env.VITE_APP_ID);
-        formData.append("app_id", 427)
+        formData.append("app_id", process.env.REACT_APP_APP_ID);
 
         // formData.append('otp',otp);
         await sendVerificationOtpService(formData)
@@ -468,12 +458,9 @@ export default function LandingPage2() {
             state && formData.append("state", findStateName(state)?.name);
             formData.append("device_token", "WEB");
             formData.append("email", email);
-            // formData.append("course_id", import.meta.env.VITE_COURSEID2);
-            formData.append("course_id", 13154)
-
+            formData.append("course_id", process.env.REACT_APP_COURSEID2);
             formData.append("coupon_code", coupanCode ? coupanCode : "");
-            // formData.append("app_id", import.meta.env.VITE_APP_ID);
-            formData.append("app_id", 427)
+            formData.append("app_id", process.env.REACT_APP_APP_ID);
 
             // formData.append('c_code', countryCode)
             formData.append("otp", otp);
@@ -492,7 +479,7 @@ export default function LandingPage2() {
                             // setTimeout(() =>{
                             setOpenModal(true);
                             // }, 1000);
-                            // getCourseDetails(import.meta.env.VITE_COURSEID2);
+                            // getCourseDetails(process.env.REACT_APP_COURSEID2);
                             closeButton && closeButton.click();
                         }, 500);
 
@@ -557,9 +544,7 @@ export default function LandingPage2() {
         setPaymentLoading(true);
         const formData = new FormData();
         formData.append("type", 1);
-        // formData.append("course_id", import.meta.env.VITE_COURSEID2);
-        formData.append("course_id", 13154)
-
+        formData.append("course_id", process.env.REACT_APP_COURSEID2);
         formData.append("is_promotional", 1);
         {
             couponApplied
@@ -662,9 +647,7 @@ export default function LandingPage2() {
         setPaymentLoading(false);
         var easebuzzCheckout = new window.EasebuzzCheckout(
             key,
-            // import.meta.env.VITE_TYPE
-            'test'
-
+            process.env.REACT_APP_TYPE
         );
         var options = {
             access_key: acc_key, // access key received via Initiate Payment
@@ -693,8 +676,7 @@ export default function LandingPage2() {
         setPaymentLoading(true);
         const formData = new FormData();
         formData.append("type", 2);
-        // formData.append("course_id", import.meta.env.VITE_COURSEID2);
-        formData.append("course_id", 13154)
+        formData.append("course_id", process.env.REACT_APP_COURSEID2);
 
         {
             couponApplied
@@ -1120,9 +1102,7 @@ export default function LandingPage2() {
                                                     onClick={() =>
                                                         applyCoupan({
                                                             coupon: coupanCode,
-                                                            // course_id: import.meta.env.VITE_COURSEID2,
-                                                            course_id: 13154
-
+                                                            course_id: process.env.REACT_APP_COURSEID2,
                                                         })
                                                     }
                                                 >

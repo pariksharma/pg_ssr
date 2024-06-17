@@ -224,10 +224,8 @@ export function isCurrentTimeBefore(upcomingTimestamp) {
 export function aesCbcEncryption(string) {
 
   // 1171086418644515_" . APP_ID
-  const cbcKey = "1171086418644515_"
-  const iniVector = "117#Nerglnw3@@OI)30@I*Dm'@@_"
-  // const cbcKey = "1171086418644515_" + import.meta.env.VITE_APP_ID;
-  // const iniVector = "117#Nerglnw3@@OI)30@I*Dm'@@_" + import.meta.env.VITE_APP_ID;
+  const cbcKey = "1171086418644515_" + process.env.REACT_APP_APP_ID;
+  const iniVector = "117#Nerglnw3@@OI)30@I*Dm'@@_" + process.env.REACT_APP_APP_ID;
 
   const encrypted = CryptoJS.AES.encrypt(string, cbcKey, {
     iv: iniVector,

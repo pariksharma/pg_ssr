@@ -10,8 +10,8 @@
 // import AWS from 'aws-sdk';
 // const AWS = window.AWS;
 // export const s3 = new AWS.S3({
-//   accessKeyId: import.meta.env.VITE_AWS_ACCESSKEY,
-//   secretAccessKey: import.meta.env.VITE_AWS_SECRATE_ACCESSKEY,
+//   accessKeyId: process.env.REACT_APP_AWS_ACCESSKEY,
+//   secretAccessKey: process.env.REACT_APP_AWS_SECRATE_ACCESSKEY,
 //   region: 'ap-south-1',
 // });
 let s3;
@@ -19,10 +19,8 @@ let s3;
 if (typeof window !== 'undefined') {
   const AWS = window.AWS;
   s3 = new AWS.S3({
-    // accessKeyId: import.meta.env.VITE_AWS_ACCESSKEY,
-    // secretAccessKey: import.meta.env.VITE_AWS_SECRATE_ACCESSKEY,
-    accessKeyId: 'AKIA4UKA5WD4CYRE4ONU',
-    secretAccessKey: '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',
+    accessKeyId: process.env.REACT_APP_AWS_ACCESSKEY,
+    secretAccessKey: process.env.REACT_APP_AWS_SECRATE_ACCESSKEY,
     region: 'ap-south-1',
   });
 }

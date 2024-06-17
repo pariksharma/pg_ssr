@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
-    baseURL: "https://developmentapi.videocrypt.in/data_model/"
+    baseURL: process.env.REACT_APP_API_URL
 })
 
 axiosClient.interceptors.request.use((req) => {
@@ -11,9 +11,9 @@ axiosClient.interceptors.request.use((req) => {
     const headers = {
         'Devicetype': 4,
     // 'Version': 1,
-        'Version': 1998,
+        'Version': process.env.REACT_APP_APP_VERSION,
         'Lang': 1,
-        'Appid': 427,
+        'Appid': process.env.REACT_APP_APP_ID,
         'Userid': user_id ? user_id : 0,
         ...(jwt && { 'Jwt': jwt })
     }

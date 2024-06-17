@@ -262,17 +262,14 @@ export default function Profile() {
     try {
       const user_id = sessionStorage.getItem("user_id");
       const params = {
-        // Bucket: import.meta.env.VITE_S3_BUCKET,
-        // Key: `${import.meta.env.VITE_APP_ID}/application/profile/${user_id}/${file.name
-        //   }`,
-        Bucket: 'vc-10002130-213016812802',
-        Key : `427/application/profile/${user_id}/${file.name}`,
+        Bucket: process.env.REACT_APP_TEST_SERIES_URL,
+        Key: `${process.env.REACT_APP_TEST_SERIES_URL}/application/profile/${user_id}/${file.name
+          }`,
         Body: file,
       }; 
-      // url = `${import.meta.env.VITE_CLOUDFRONT_URL}/${params.Key}`;
+      // url = `${process.env.REACT_APP_CLOUDFRONT_URL}/${params.Key}`;
       await s3.upload(params).promise();
-      // setProfileImage(`${import.meta.env.VITE_CLOUDFRONT_URL}/${params.Key}`);
-      setProfileImage(`https://d31db1au7fm5xg.cloudfront.net/${params.Key}`)
+      setProfileImage(`${process.env.REACT_APP_CLOUDFRONT_URL}/${params.Key}`);
     } catch (err) {
       console.log(err);
     }

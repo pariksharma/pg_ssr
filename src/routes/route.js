@@ -29,6 +29,7 @@ import CCDetails from '../containers/viewDetail/CCDetails'
 import BookDetails from '../containers/bookDetails/bookDetails'
 import CartDetails from '../containers/cartDetail/cartDetails'
 import LandingPage from '../containers/landingPage/landingPage'
+import LandingPage2 from '../containers/landingPage/landingPage2'
 
 
 
@@ -60,6 +61,7 @@ const Routing = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/mentorship-for-jee-neet-2025' element={<LandingPage />} />
+        <Route path='/mentorship-for-pyq-talks-2025' element={<LandingPage2 />} />
 
         {/* Login and Signup Routes */}
         <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />

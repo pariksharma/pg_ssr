@@ -822,8 +822,7 @@ export default function LandingPage() {
         }}
       />
       // </React.Suspense>
-    )
-    }
+    )}
       {paymentLoading && <TestLoading />}
       {openModal && (
         <PaymentGatewayModal
@@ -928,7 +927,7 @@ export default function LandingPage() {
             </div>
           </div>
         </div>
-          
+  
           {activeState ? <div className="model-opecity"></div> : null}
         <div
           className={`modal fade show ${activeState ? 'modal_show' : ''}`}

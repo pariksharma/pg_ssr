@@ -26,6 +26,9 @@ import NotificationTab from '../containers/notificationTab/notificationTab'
 import LiveTest from '../containers/liveTest/liveTest'
 import LiveClasses from '../containers/liveClasses/liveClasses'
 import CCDetails from '../containers/viewDetail/CCDetails'
+import BookDetails from '../containers/bookDetails/bookDetails'
+import CartDetails from '../containers/cartDetail/cartDetails'
+import LandingPage from '../containers/landingPage/landingPage'
 
 
 
@@ -56,6 +59,7 @@ const Routing = () => {
     <>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/mentorship-for-jee-neet-2025' element={<LandingPage />} />
 
         {/* Login and Signup Routes */}
         <Route path='/login' element={<PublicRoute redirectTo={'/'} ><Login /></PublicRoute>} />
@@ -72,11 +76,15 @@ const Routing = () => {
         <Route path='/livetest' element={<PrivateRoute redirectTo={"/login"}><LiveTest /></PrivateRoute>} />
         <Route path='/liveclasses' element={<PrivateRoute redirectTo={"/login"}><LiveClasses /></PrivateRoute>} />
 
+        {/* Cart Route */}
+        <Route path='/my-cart' element={<PrivateRoute redirectTo={"/login"}><CartDetails /></PrivateRoute>} />
+
         {/* Course Details Routes */}
         <Route path='/view_details' element={<ViewDetail />} />
         <Route path='/cc_details' element={<CCDetails />} />
         <Route path='/allcourses' element={<AllCourses />} />
         <Route path='/ourcourses' element={<OurCourses />} />
+        <Route path='/bookdetails/:id' element={<BookDetails />} />
         <Route path='/booksummery' element={<BookSummery />} />
         <Route path='*' element={<NotFound />} />
 
